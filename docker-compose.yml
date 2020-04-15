@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  mongo-seed:
+    build: ./docker-files/seed
+    links:
+      - mongodb
+
+  node:
+    build: .
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+      - mongo-seed
+    ports:
+      - "8080:8080"

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>ALPR - Car Details</title>
+
+        <!-- Global stylesheets -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link href="../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css" rel="stylesheet" type="text/css" />
+        <link
+            href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+        />
+
+        <link href="../assets/css/global.css" rel="stylesheet" type="text/css" />
+        <!-- /global stylesheets -->
+
+        <script
+            defer
+            src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"
+        ></script>
+        <!-- Core JS files -->
+        <script src="../global_assets/js/main/jquery.min.js"></script>
+        <script defer src="../global_assets/js/main/bootstrap.bundle.min.js"></script>
+        <script defer src="../global_assets/js/plugins/loaders/blockui.min.js"></script>
+        <!-- /core JS files -->
+
+        <!-- Theme JS files -->
+
+        <script defer src="../global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+        <script defer src="../global_assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+        <script defer src="../global_assets/js/plugins/tables/datatables/extensions/pdfmake/pdfmake.min.js"></script>
+        <script defer src="../global_assets/js/plugins/tables/datatables/extensions/pdfmake/vfs_fonts.min.js"></script>
+        <script defer src="../global_assets/js/plugins/tables/datatables/extensions/jszip/jszip.min.js"></script>
+        <script defer src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+        <script defer src="../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script defer defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+        <script src="../assets/js/navbar.js"></script>
+
+        <script defer src="../assets/js/app.js"></script>
+        <script defer src="../assets/js/car-details.js"></script>
+
+        <!-- /theme JS files -->
+    </head>
+
+    <body>
+        <!-- Main navbar -->
+        <nav
+            class="navbar is-fixed-top"
+            role="navigation"
+            aria-label="main navigation"
+            style="height: 65px; background: linear-gradient(45deg, #0d7eb3, #6dc381);"
+        >
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-4 has-text-white" href="/">
+                    JOINT SCOPE
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbarBasicExample"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <span class="icon has-text-white">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="field" style="width: 300px;">
+                            <p class="control has-icons-right">
+                                <input class="input is-rounded is-small" type="email" placeholder="Search..." />
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-globe-asia"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-history"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-bell"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item" style="width: 70px;">
+                        <figure
+                            class="image is-48x48"
+                            style="border: solid 2px white; border-radius: 50%; max-height: 48px;"
+                        >
+                            <img class="is-rounded" src="https://i.pravatar.cc/48" style="max-height: 48px;" />
+                        </figure>
+                    </div>
+                    <div class="navbar-item" style="padding-left: 0;">
+                        <div>
+                            <p class="has-text-white" style="line-height: 1;"><b>Name Surname</b></p>
+                            <p class="has-text-white is-size-6" style="line-height: 1;"><small>Admin</small></p>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-th"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /main navbar -->
+
+        <!-- Page content -->
+        <section style="height: 100%; margin-bottom: 30px;">
+            <!-- Main sidebar -->
+            <aside class="menu">
+                <p class="menu-label">
+                    General
+                </p>
+                <ul class="menu-list">
+                    <li>
+                        <a
+                            href="/"
+                            id="navDashboard"
+                            style="justify-content: space-between; align-items: center; display: flex;"
+                            >Dashboard <span class="tag is-success is-rounded">3</span></a
+                        >
+                    </li>
+                    <li><a href="/car-list" id="navCarList">Car List</a></li>
+                </ul>
+                <p class="menu-label">
+                    Administration
+                </p>
+                <ul class="menu-list">
+                    <li><a>Team Settings</a></li>
+                    <li>
+                        <a>Manage Your Team</a>
+                        <ul>
+                            <li><a>Members</a></li>
+                            <li><a>Plugins</a></li>
+                            <li><a>Add a member</a></li>
+                        </ul>
+                    </li>
+                    <li><a>Invitations</a></li>
+                    <li><a>Cloud Storage Environment Settings</a></li>
+                    <li><a>Authentication</a></li>
+                </ul>
+                <p class="menu-label">
+                    Transactions
+                </p>
+                <ul class="menu-list">
+                    <li><a>Payments</a></li>
+                    <li><a>Transfers</a></li>
+                    <li><a>Balance</a></li>
+                </ul>
+            </aside>
+            <!-- /main sidebar -->
+
+            <!-- Main content -->
+            <article
+                style="
+                    flex-grow: 1;
+                    margin-left: 265px;
+                    padding-top: 15px;
+                    overflow-y: auto;
+                    height: 100%;
+                    margin-right: -15px;
+                "
+            >
+                <div class="container is-fluid">
+                    <h4 class="title is-4"><b class="has-text-info">ALPR</b> - Dashboard</h4>
+
+                    <div class="content columns">
+                        <div class="column is-four-fifths">
+                            <div class="card" style="width: 100%; border-radius: 10px;">
+                                <div class="columns" style="width: 100%; margin: 0;">
+                                    <div
+                                        class="column is-one-third"
+                                        style="border-right: solid 1px #f1f1f1; padding: 20px; flex-direction: column;"
+                                    >
+                                        <div
+                                            style="
+                                                display: flex;
+                                                flex-direction: column;
+                                                width: 100%;
+                                                align-items: center;
+                                            "
+                                        >
+                                            <img
+                                                class="is-block"
+                                                style="
+                                                    width: 225px;
+                                                    height: 130px;
+                                                    margin-bottom: 20px;
+                                                    border-radius: 10px;
+                                                "
+                                                id="plateImg"
+                                                alt="Plate Image"
+                                                title="Plate Image"
+                                                src="https://via.placeholder.com/225x130?text=loading"
+                                            />
+                                            <img
+                                                id="vehicleImg"
+                                                style="width: 225px; height: 130px; border-radius: 10px;"
+                                                alt="Vehicle Image"
+                                                class="is-block"
+                                                title="Vehicle Image"
+                                                src="https://via.placeholder.com/225x130?text=loading"
+                                            />
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="is-size-5"
+                                                style="display: flex; justify-content: space-between; padding: 20px 0;"
+                                            >
+                                                <b class="has-text-primary">Event Time</b>
+                                                <p id="event_time">
+                                                    ...loading
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="is-size-5"
+                                                style="display: flex; justify-content: space-between;"
+                                            >
+                                                <b class="has-text-primary">Plate Number</b>
+                                                <p id="plate_number" style="padding-bottom: 20px;">
+                                                    ...loading
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="is-size-5"
+                                                style="display: flex; justify-content: space-between;"
+                                            >
+                                                <b class="has-text-primary">Plate Code</b>
+                                                <p id="plate_code" style="padding-bottom: 20px;">
+                                                    ...loading
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="is-size-5"
+                                                style="display: flex; justify-content: space-between;"
+                                            >
+                                                <b class="has-text-primary">State</b>
+                                                <p id="state" style="padding-bottom: 20px;">
+                                                    ...loading
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="is-size-5"
+                                                style="display: flex; justify-content: space-between;"
+                                            >
+                                                <b class="has-text-primary">Country</b>
+                                                <p id="country">...loading</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column" style="padding: 20px; border-left: solid 1px #f1f1f1;">
+                                        <div style="width: 100%;">
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mdc-text-field mdc-text-field--outlined"
+                                                style="width: 100%; margin-bottom: 20px;"
+                                            >
+                                                <input
+                                                    class="mdc-text-field__input"
+                                                    id="text-field-hero-input"
+                                                    placeholder="Equipment Number"
+                                                />
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="text-field-hero-input" class="mdc-floating-label"
+                                                            >Equipment Number</label
+                                                        >
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column" style="height: 100%;">
+                            <div class="card" style="padding: 20px; width: 100%; border-radius: 10px;">
+                                <button
+                                    class="button is-info is-light is-block"
+                                    style="width: 100%; margin-bottom: 15px;"
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    class="button is-success is-light is-block"
+                                    style="width: 100%; margin-bottom: 15px;"
+                                >
+                                    Download
+                                </button>
+                                <button
+                                    class="button is-warning is-light is-block"
+                                    style="width: 100%; margin-bottom: 15px;"
+                                >
+                                    Delete
+                                </button>
+                                <button class="button is-danger is-light is-block" style="width: 100%;">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>ALPR poc</title>
+
+        <!-- Global stylesheets -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/global.css" rel="stylesheet" type="text/css" />
+        <!-- /global stylesheets -->
+
+        <script src="global_assets/js/main/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+        <script src="assets/js/navbar.js"></script>
+        <script type="module" src="assets/js/dashboard.js"></script>
+        <!-- /theme JS files -->
+    </head>
+
+    <body>
+        <!-- Main navbar -->
+        <nav
+            class="navbar is-fixed-top"
+            role="navigation"
+            aria-label="main navigation"
+            style="height: 65px; background: linear-gradient(45deg, #0d7eb3, #6dc381);"
+        >
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-4 has-text-white" href="/">
+                    JOINT SCOPE
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbarBasicExample"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <span class="icon has-text-white">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="field" style="width: 300px;">
+                            <p class="control has-icons-right">
+                                <input class="input is-rounded is-small" type="email" placeholder="Search..." />
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-globe-asia"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-history"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-bell"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item" style="width: 70px;">
+                        <figure
+                            class="image is-48x48"
+                            style="border: solid 2px white; border-radius: 50%; max-height: 48px;"
+                        >
+                            <img class="is-rounded" src="https://i.pravatar.cc/48" style="max-height: 48px;" />
+                        </figure>
+                    </div>
+                    <div class="navbar-item" style="padding-left: 0;">
+                        <div>
+                            <p class="has-text-white" style="line-height: 1;"><b>Name Surname</b></p>
+                            <p class="has-text-white is-size-6" style="line-height: 1;"><small>Admin</small></p>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-th"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /main navbar -->
+
+        <!-- Page content -->
+        <section style="height: 100%;">
+            <!-- Main sidebar -->
+            <aside class="menu">
+                <p class="menu-label">
+                    General
+                </p>
+                <ul class="menu-list">
+                    <li>
+                        <a
+                            href="/"
+                            id="navDashboard"
+                            style="justify-content: space-between; align-items: center; display: flex;"
+                            >Dashboard <span class="tag is-success is-rounded">3</span></a
+                        >
+                    </li>
+                    <li><a href="/car-list" id="navCarList">Car List</a></li>
+                </ul>
+                <p class="menu-label">
+                    Administration
+                </p>
+                <ul class="menu-list">
+                    <li><a>Team Settings</a></li>
+                    <li>
+                        <a>Manage Your Team</a>
+                        <ul>
+                            <li><a>Members</a></li>
+                            <li><a>Plugins</a></li>
+                            <li><a>Add a member</a></li>
+                        </ul>
+                    </li>
+                    <li><a>Invitations</a></li>
+                    <li><a>Cloud Storage Environment Settings</a></li>
+                    <li><a>Authentication</a></li>
+                </ul>
+                <p class="menu-label">
+                    Transactions
+                </p>
+                <ul class="menu-list">
+                    <li><a>Payments</a></li>
+                    <li><a>Transfers</a></li>
+                    <li><a>Balance</a></li>
+                </ul>
+            </aside>
+            <!-- /main sidebar -->
+
+            <!-- Main content -->
+            <article
+                style="
+                    flex-grow: 1;
+                    margin-left: 265px;
+                    padding-top: 15px;
+                    overflow-y: auto;
+                    height: 100%;
+                    margin-right: -15px;
+                "
+            >
+                <div class="container is-fluid">
+                    <h4 class="title is-4"><b class="has-text-info">ALPR</b> - Dashboard</h4>
+
+                    <div class="content">
+                        <div class="columns">
+                            <div class="column is-one-third" style="align-self: stretch;">
+                                <div
+                                    class="card"
+                                    style="align-items: center; border-radius: 10px; width: 100%; padding: 20px;"
+                                >
+                                    <h5>Climat history</h5>
+                                    <div id="chart2"></div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card is-flex" style="border-radius: 10px; width: 100%; padding: 20px;">
+                                    <div style="flex-grow: 1;">
+                                        <div class="buttons" style="display: flex; justify-content: flex-end;">
+                                            <button class="button is-primary">Month</button>
+                                            <button class="button is-success">Year</button>
+                                        </div>
+                                        <div id="chart" style="display: flex;"></div>
+                                    </div>
+                                    <div
+                                        style="
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                            min-width: 30%;
+                                            margin-left: 10px;
+                                            border-left: solid 1px #f1f1f1;
+                                            padding-left: 20px;
+                                        "
+                                    >
+                                        <div>
+                                            <h5 style="margin-top: 10px;">Claims History</h5>
+                                            <div class="claim-item" style="margin-bottom: 20px;">
+                                                <div>
+                                                    <p class="is-marginless">Assets</p>
+                                                    <p class="is-marginless">Daye Here</p>
+                                                </div>
+                                                <div>12345667</div>
+                                            </div>
+                                            <div class="claim-item" style="margin-bottom: 20px;">
+                                                <div>
+                                                    <p class="is-marginless">Assets</p>
+                                                    <p class="is-marginless">Daye Here</p>
+                                                </div>
+                                                <div>12345667</div>
+                                            </div>
+                                            <div class="claim-item">
+                                                <div>
+                                                    <p class="is-marginless">Assets</p>
+                                                    <p class="is-marginless">Daye Here</p>
+                                                </div>
+                                                <div>12345667</div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div>
+                                            <h5>Total Claims</h5>
+                                            <p>123456789 AED</p>
+                                        </div>
+
+                                        <progress
+                                            class="progress is-small is-success"
+                                            value="15"
+                                            max="100"
+                                            style="margin-bottom: 20px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-multiline">
+                            <div class="column is-one-third" style="flex-direction: column;">
+                                <div
+                                    class="card"
+                                    style="width: 100%; border-radius: 10px; padding: 20px; margin-bottom: 10px;"
+                                >
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Living Room</span>
+                                            <span>22 °C</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="22"
+                                            max="30"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Master Bed Room</span>
+                                            <span>19 °C</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="19"
+                                            max="30"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Kitchen</span>
+                                            <span>26 °C</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="26"
+                                            max="30"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Room 2</span>
+                                            <span>21 °C</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="21"
+                                            max="30"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Secret Room</span>
+                                            <span>7 °C</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="7"
+                                            max="30"
+                                            style="margin-bottom: 25px;"
+                                            >7%</progress
+                                        >
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 100%; border-radius: 10px; padding: 20px;">
+                                    <h5>Amber Light</h5>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Red</span>
+                                            <span>198</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-danger"
+                                            value="198"
+                                            max="255"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Green</span>
+                                            <span>90</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-success"
+                                            value="90"
+                                            max="255"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="is-flex"
+                                            style="justify-content: space-between; margin-bottom: 5px;"
+                                        >
+                                            <span>Blue</span>
+                                            <span>220</span>
+                                        </div>
+                                        <progress
+                                            class="progress is-small is-info"
+                                            value="220"
+                                            max="255"
+                                            style="margin-bottom: 25px;"
+                                            >15%</progress
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-one-third" style="flex-direction: column;">
+                                <div
+                                    class="card"
+                                    style="width: 100%; border-radius: 10px; padding: 20px; margin-bottom: 10px;"
+                                >
+                                    <h5>Green Energy</h5>
+                                    <p>Average usage: 62%</p>
+                                    <div id="splineChart"></div>
+                                </div>
+                                <div class="card" style="width: 100%; border-radius: 10px; padding: 20px;">
+                                    <div id="colChart"></div>
+                                </div>
+                            </div>
+
+                            <div class="column is-one-third" style="flex-direction: column;">
+                                <div
+                                    class="card"
+                                    style="width: 100%; border-radius: 10px; padding: 20px; margin-bottom: 10px;"
+                                >
+                                    <div
+                                        class="is-flex"
+                                        style="justify-content: center; margin-bottom: 30px; margin-top: 30px;"
+                                    >
+                                        <figure class="image is-64x64" style="margin: 0 10px 0 0;">
+                                            <img
+                                                src="https://www.shareicon.net/data/256x256/2016/11/09/851556_miscellaneous_512x512.png"
+                                            />
+                                        </figure>
+                                        <div style="align-self: center;">
+                                            <h5 style="margin-bottom: 0;">Room Cleaning</h5>
+                                            <p>Robot Cleaner A</p>
+                                        </div>
+                                    </div>
+                                    <div class="is-flex" style="justify-content: space-between;">
+                                        <div>
+                                            <input type="checkbox" style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Su</p>
+                                            <p>20</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" checked style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Mo</p>
+                                            <p>21</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Tu</p>
+                                            <p>22</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" checked style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">We</p>
+                                            <p>23</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Th</p>
+                                            <p>34</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Fr</p>
+                                            <p>25</p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" checked style="margin-bottom: 27px;" />
+                                            <p style="border-bottom: solid 1px blue;">Sa</p>
+                                            <p>26</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 100%; border-radius: 10px; padding: 20px;">
+                                    <div id="circleChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript sourced data -->
+                        <!-- /javascript sourced data -->
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+html {
+  background-color: #f1f1f1;
+  font-size: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 65px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+aside {
+  background-color: white;
+  padding: 30px 10px;
+  position: fixed;
+  height: 100%;
+}
+
+.claim-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+}
+
+.progress.is-small {
+  height: 0.4rem;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+table.dataTable tbody td.select-checkbox:before,
+table.dataTable tbody td.select-checkbox:after,
+table.dataTable tbody th.select-checkbox:before,
+table.dataTable tbody th.select-checkbox:after {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  position: initial;
+}
+
+.table.is-hoverable tbody tr:not(.is-selected):hover {
+  background-color: #e4e6e9 !important;
+}
+
+table.dataTable tbody > tr.selected,
+table.dataTable tbody > tr > .selected {
+  background-color: #e4e6e9 !important;
+}
+
+.table-column {
+  min-width: 170px;
+  box-sizing: border-box;
+}
+
+.table-column-small {
+  min-width: 100px;
+  box-sizing: border-box;
+  text-align: center !important;
+}
+
+.content table td {
+  padding: 10px 0 !important;
+}

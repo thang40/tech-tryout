@@ -1,0 +1,12 @@
+.navbar, .navbar-collapse {
+    background: rgb(7, 23, 48);
+}
+
+.sidebar-content {
+    overflow-y: hidden;
+    background: linear-gradient(25deg, rgba(30,118,183,1) 0%, rgba(149,224,108,1) 100%);
+}
+
+.btn-primary {
+    background: rgb(19, 127, 132)
+}

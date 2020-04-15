@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>ALPR - Car List</title>
+
+        <!-- Global stylesheets -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css" rel="stylesheet" type="text/css" />
+        <link
+            href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <link href="assets/css/global.css" rel="stylesheet" type="text/css" />
+        <!-- /global stylesheets -->
+
+        <!-- Core JS files -->
+        <script src="global_assets/js/main/jquery.min.js"></script>
+        <script src="global_assets/js/main/bootstrap.bundle.min.js"></script>
+        <script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
+        <!-- /core JS files -->
+
+        <!-- Theme JS files -->
+
+        <script src="global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+        <script src="global_assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+        <script src="global_assets/js/plugins/tables/datatables/extensions/pdfmake/pdfmake.min.js"></script>
+        <script src="global_assets/js/plugins/tables/datatables/extensions/pdfmake/vfs_fonts.min.js"></script>
+        <script src="global_assets/js/plugins/tables/datatables/extensions/jszip/jszip.min.js"></script>
+        <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+        <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+        <script src="assets/js/navbar.js"></script>
+
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/car-list.js"></script>
+
+        <!-- /theme JS files -->
+    </head>
+
+    <body>
+        <!-- Main navbar -->
+        <nav
+            class="navbar is-fixed-top"
+            role="navigation"
+            aria-label="main navigation"
+            style="height: 65px; background: linear-gradient(45deg, #0d7eb3, #6dc381);"
+        >
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-4 has-text-white" href="/">
+                    JOINT SCOPE
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbarBasicExample"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <span class="icon has-text-white">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="field" style="width: 300px;">
+                            <p class="control has-icons-right">
+                                <input class="input is-rounded is-small" type="email" placeholder="Search..." />
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-globe-asia"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-history"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-bell"></i>
+                        </span>
+                    </div>
+                    <div class="navbar-item" style="width: 70px;">
+                        <figure
+                            class="image is-48x48"
+                            style="border: solid 2px white; border-radius: 50%; max-height: 48px;"
+                        >
+                            <img class="is-rounded" src="https://i.pravatar.cc/48" style="max-height: 48px;" />
+                        </figure>
+                    </div>
+                    <div class="navbar-item" style="padding-left: 0;">
+                        <div>
+                            <p class="has-text-white" style="line-height: 1;"><b>Name Surname</b></p>
+                            <p class="has-text-white is-size-6" style="line-height: 1;"><small>Admin</small></p>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item">
+                        <span class="icon has-text-light is-size-6">
+                            <i class="fas fa-th"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /main navbar -->
+
+        <!-- Page content -->
+        <section style="height: 100%; margin-bottom: 30px;">
+            <!-- Main sidebar -->
+            <aside class="menu">
+                <p class="menu-label">
+                    General
+                </p>
+                <ul class="menu-list">
+                    <li>
+                        <a
+                            href="/"
+                            id="navDashboard"
+                            style="justify-content: space-between; align-items: center; display: flex;"
+                            >Dashboard <span class="tag is-success is-rounded">3</span></a
+                        >
+                    </li>
+                    <li><a href="/car-list" id="navCarList">Car List</a></li>
+                </ul>
+                <p class="menu-label">
+                    Administration
+                </p>
+                <ul class="menu-list">
+                    <li><a>Team Settings</a></li>
+                    <li>
+                        <a>Manage Your Team</a>
+                        <ul>
+                            <li><a>Members</a></li>
+                            <li><a>Plugins</a></li>
+                            <li><a>Add a member</a></li>
+                        </ul>
+                    </li>
+                    <li><a>Invitations</a></li>
+                    <li><a>Cloud Storage Environment Settings</a></li>
+                    <li><a>Authentication</a></li>
+                </ul>
+                <p class="menu-label">
+                    Transactions
+                </p>
+                <ul class="menu-list">
+                    <li><a>Payments</a></li>
+                    <li><a>Transfers</a></li>
+                    <li><a>Balance</a></li>
+                </ul>
+            </aside>
+            <!-- /main sidebar -->
+
+            <!-- Main content -->
+            <article
+                style="
+                    flex-grow: 1;
+                    margin-left: 265px;
+                    padding-top: 15px;
+                    overflow-y: auto;
+                    height: 100%;
+                    margin-right: -15px;
+                "
+            >
+                <div class="container is-fluid">
+                    <h4 class="title is-4"><b class="has-text-info">ALPR</b> - Dashboard</h4>
+
+                    <div class="content">
+                        <div class="card" style="padding: 10px 0; border-radius: 10px;">
+                            <div id="table-container" style="height: 77vh;">
+                                <nav class="navbar" role="navigation" aria-label="main navigation">
+                                    <div class="navbar-brand">
+                                        <a
+                                            role="button"
+                                            class="navbar-burger burger"
+                                            aria-label="menu"
+                                            aria-expanded="false"
+                                            data-target="navbarBasicExample"
+                                        >
+                                            <span aria-hidden="true"></span>
+                                            <span aria-hidden="true"></span>
+                                            <span aria-hidden="true"></span>
+                                        </a>
+                                    </div>
+
+                                    <div id="navbarBasicExample" class="navbar-menu">
+                                        <div class="navbar-start">
+                                            <div class="navbar-item">
+                                                <div class="control" style="margin-left: 5px;">
+                                                    <div class="pretty p-default p-round">
+                                                        <input type="checkbox" id="refreshChbox" />
+                                                        <div class="state">
+                                                            <label style="margin-left: 5px;"
+                                                                >Refresh every 2 seconds</label
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="navbar-end">
+                                            <div class="navbar-item" id="searchBarWrapper"></div>
+                                            <div class="navbar-item" id="tableBtns"></div>
+                                        </div>
+                                    </div>
+                                </nav>
+
+                                <table id="PlatesTable" class="table datatable-js is-hoverable" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th style="padding-left: 27px;">
+                                                <div class="pretty p-svg p-curve">
+                                                    <input type="checkbox" id="selectAllCkb" />
+                                                    <div class="state p-info">
+                                                        <!-- svg path -->
+                                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                                style="stroke: white; fill: white;"
+                                                            ></path>
+                                                        </svg>
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th style="white-space: nowrap;">Event Time</th>
+                                            <th style="white-space: nowrap;">Plate Number</th>
+                                            <th style="white-space: nowrap;">Plate Code</th>
+                                            <th style="white-space: nowrap;">State</th>
+                                            <th style="white-space: nowrap;">Country</th>
+                                            <th style="white-space: nowrap;">Plate Image</th>
+                                            <th style="white-space: nowrap;">Vehicle Image</th>
+                                            <th style="white-space: nowrap;">Is Junk?</th>
+                                            <th style="white-space: nowrap;">Is Valid Code?</th>
+                                            <th style="white-space: nowrap;">Is Valid Plate?</th>
+                                            <th style="white-space: nowrap;">Is Valid Source?</th>
+                                            <th style="white-space: nowrap;">Validity?</th>
+                                            <th style="white-space: nowrap;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>
